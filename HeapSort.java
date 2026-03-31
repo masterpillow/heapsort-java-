@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * HeapSort Implementation for String Arrays (and List<String>)
@@ -61,7 +62,7 @@ public class HeapSort {
     }
 
     // ─────────────────────────────────────────────────────────────
-    //  PUBLIC API — List<String> overload (bonus)
+    //  PUBLIC API — List<String> overload
     // ─────────────────────────────────────────────────────────────
 
     /**
@@ -183,65 +184,26 @@ public class HeapSort {
     }
 
     // ─────────────────────────────────────────────────────────────
-    //  UTILITY — pretty printing
-    // ─────────────────────────────────────────────────────────────
-
-    /**
-     * Returns a neatly formatted string representation of an array.
-     */
-    private static String arrayToString(String[] arr) {
-        StringBuilder sb = new StringBuilder("[");
-        for (int i = 0; i < arr.length; i++) {
-            sb.append("\"").append(arr[i]).append("\"");
-            if (i < arr.length - 1) sb.append(", ");
-        }
-        sb.append("]");
-        return sb.toString();
-    }
-
-    // ─────────────────────────────────────────────────────────────
     //  MAIN — demonstration & test cases
     // ─────────────────────────────────────────────────────────────
 
-    /**
-     * Entry point: runs four test cases that cover the main scenarios.
-     *
-     * Expected output:
-     * ─────────────────────────────────────────────────────────────
-     * === Test 1: Ascending Sort (Array) ===
-     * Before : ["banana", "apple", "cherry", "date", "elderberry", "fig"]
-     * After  : ["apple", "banana", "cherry", "date", "elderberry", "fig"]
-     *
-     * === Test 2: Descending Sort (Array) ===
-     * Before : ["banana", "apple", "cherry", "date", "elderberry", "fig"]
-     * After  : ["fig", "elderberry", "date", "cherry", "banana", "apple"]
-     *
-     * === Test 3: Ascending Sort (List<String>) ===
-     * Before : ["mango", "kiwi", "peach", "avocado", "lime"]
-     * After  : ["avocado", "kiwi", "lime", "mango", "peach"]
-     *
-     * === Test 4: Descending Sort (List<String>) ===
-     * Before : ["mango", "kiwi", "peach", "avocado", "lime"]
-     * After  : ["peach", "mango", "lime", "kiwi", "avocado"]
-     * ─────────────────────────────────────────────────────────────
-     */
     public static void main(String[] args) {
 
         // ── Test 1: Ascending sort on a String array ──────────────
         System.out.println("=== Test 1: Ascending Sort (Array) ===");
         String[] arr1 = {"banana", "apple", "cherry", "date", "elderberry", "fig"};
-        System.out.println("Before : " + arrayToString(arr1));
+        System.out.println("Before : " + Arrays.toString(arr1));
         HeapSort(arr1, 0);                        // order == 0 → ascending
-        System.out.println("After  : " + arrayToString(arr1));
+        System.out.println("After  : " + Arrays.toString(arr1));
 
         System.out.println();
 
         // ── Test 2: Descending sort on a String array ─────────────
         System.out.println("=== Test 2: Descending Sort (Array) ===");
         String[] arr2 = {"banana", "apple", "cherry", "date", "elderberry", "fig"};
-        System.out.println("Before : " + arrayToString(arr2));
+        System.out.println("Before : " + Arrays.toString(arr2));
         HeapSort(arr2, 1);                        // order != 0 → descending
-        System.out.println("After  : " + arrayToString(arr2));
+        System.out.println("After  : " + Arrays.toString(arr2));
 
         System.out.println();
 
